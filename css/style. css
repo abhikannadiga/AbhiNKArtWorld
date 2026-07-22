@@ -1,1 +1,72 @@
+/* ===========================
+   Hero Image Slider
+=========================== */
 
+.hero{
+    position: relative;
+    overflow: hidden;
+}
+
+.slider{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.slide{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide.active{
+    opacity: 1;
+}
+
+.hero-content{
+    position: relative;
+    z-index: 2;
+}
+
+/* Dark overlay on slider */
+
+.hero::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    z-index: 1;
+}
+
+/* Buttons */
+
+.btn:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255,215,0,.4);
+}
+
+/* Gallery hover */
+
+.gallery-grid img:hover{
+    box-shadow: 0 10px 25px rgba(255,215,0,.35);
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-thumb{
+    background:gold;
+    border-radius:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#111;
+}
