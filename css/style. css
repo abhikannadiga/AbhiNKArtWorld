@@ -1,72 +1,81 @@
 /* ===========================
-   Hero Image Slider
+   Home Banner
 =========================== */
 
 .hero{
-    position: relative;
-    overflow: hidden;
+    width:100%;
+    min-height:100vh;
+    background:url("../images/banner.png") no-repeat center center;
+    background-size:contain;
+    background-color:#111;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+    padding:20px;
 }
 
-.slider{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-}
-
-.slide{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-}
-
-.slide.active{
-    opacity: 1;
+.hero::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.15);
 }
 
 .hero-content{
-    position: relative;
-    z-index: 2;
+    position:relative;
+    z-index:2;
+    text-align:center;
 }
 
-/* Dark overlay on slider */
-
-.hero::before{
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.55);
-    z-index: 1;
+.hero-content h1,
+.hero-content h2,
+.hero-content p{
+    display:none;
 }
 
-/* Buttons */
-
-.btn:hover{
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(255,215,0,.4);
+.banner-buttons{
+    position:absolute;
+    bottom:30px;
+    left:50%;
+    transform:translateX(-50%);
+    display:flex;
+    gap:15px;
+    z-index:5;
 }
 
-/* Gallery hover */
-
-.gallery-grid img:hover{
-    box-shadow: 0 10px 25px rgba(255,215,0,.35);
-}
-
-/* Scrollbar */
-
-::-webkit-scrollbar{
-    width:10px;
-}
-
-::-webkit-scrollbar-thumb{
+.banner-buttons .btn{
+    padding:15px 35px;
     background:gold;
-    border-radius:10px;
+    color:#000;
+    text-decoration:none;
+    border-radius:30px;
+    font-weight:bold;
+    transition:.3s;
 }
 
-::-webkit-scrollbar-track{
-    background:#111;
+.banner-buttons .btn:hover{
+    background:#fff;
+}
+
+@media(max-width:768px){
+
+.hero{
+    min-height:70vh;
+    background-size:contain;
+}
+
+.banner-buttons{
+    flex-direction:column;
+    bottom:20px;
+}
+
+.banner-buttons .btn{
+    width:180px;
+    text-align:center;
+}
+
 }
