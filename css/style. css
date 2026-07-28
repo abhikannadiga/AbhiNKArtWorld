@@ -1,5 +1,5 @@
 /* ==========================================
-   Abhi NK Art World - Premium CSS
+   Abhi NK Art World
 ========================================== */
 
 *{
@@ -19,33 +19,30 @@ body{
     line-height:1.6;
 }
 
-/* ================= HEADER ================= */
+/* Header */
 
 header{
-    width:100%;
     position:fixed;
     top:0;
     left:0;
+    width:100%;
     background:#000;
+    padding:15px 8%;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:18px 8%;
     z-index:999;
-    box-shadow:0 0 15px rgba(255,215,0,.25);
+    box-shadow:0 3px 15px rgba(255,215,0,.2);
 }
 
 .logo{
     font-size:30px;
     font-weight:bold;
-    color:#fff;
 }
 
 .logo span{
     color:gold;
 }
-
-/* ================= MENU ================= */
 
 nav ul{
     display:flex;
@@ -57,151 +54,129 @@ nav ul li{
 }
 
 nav ul li a{
-
     color:#fff;
-
     text-decoration:none;
-
     font-size:18px;
-
     transition:.3s;
-
 }
 
 nav ul li a:hover,
 nav ul li a.active{
-
     color:gold;
-
 }
-
-/* ================= HOME BANNER ================= */
+/* ==========================================
+   HERO SECTION
+========================================== */
 
 .hero{
-
-    width:100%;
-
-    height:100vh;
-
-    background:url("../images/banner.jpg");
-
-    background-size:cover;
-
-    background-position:center;
-
-    background-repeat:no-repeat;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
     position:relative;
-
-}
-
-.hero-overlay{
-
-    position:absolute;
-
     width:100%;
-
-    height:100%;
-
-    background:rgba(0,0,0,.35);
-
+    height:100vh;
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
+
+/* Slider */
+
+.slider{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+}
+
+.slide{
+    position:absolute;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    opacity:0;
+    transition:opacity 1.2s ease-in-out;
+}
+
+.slide.active{
+    opacity:1;
+}
+
+/* Dark Overlay */
+
+.hero::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.45);
+    z-index:1;
+}
+
+/* Hero Content */
 
 .hero-content{
-
     position:relative;
-
-    z-index:10;
-
+    z-index:2;
     text-align:center;
-
+    color:#fff;
+    max-width:800px;
+    padding:20px;
 }
 
 .hero-content h1{
-
-    font-size:45px;
-
+    font-size:50px;
+    margin-bottom:10px;
 }
 
 .hero-content h2{
-
-    font-size:65px;
-
+    font-size:70px;
     color:gold;
-
-    margin:15px 0;
-
+    margin-bottom:20px;
 }
 
 .hero-content p{
-
-    max-width:700px;
-
-    margin:auto;
-
     font-size:22px;
-
     margin-bottom:35px;
-
+    line-height:1.8;
 }
 
+/* Buttons */
+
 .btn{
-
     display:inline-block;
-
     padding:15px 35px;
-
+    margin:10px;
     background:gold;
-
     color:#000;
-
     text-decoration:none;
-
-    border-radius:40px;
-
     font-weight:bold;
-
-    margin:8px;
-
-    transition:.3s;
-
+    border-radius:50px;
+    transition:0.3s;
 }
 
 .btn:hover{
-
     background:#fff;
-
-    transform:translateY(-4px);
-
+    transform:translateY(-5px);
 }
-
-/* ================= SECTION ================= */
+/* ==========================================
+   SECTION
+========================================== */
 
 section{
-
     padding:80px 8%;
-
 }
 
 section h2{
-
     text-align:center;
-
-    color:gold;
-
     font-size:40px;
-
-    margin-bottom:40px;
-
+    color:gold;
+    margin-bottom:50px;
 }
+
 /* ==========================================
-   ABOUT SECTION
+   ABOUT
 ========================================== */
 
 .about-grid{
@@ -211,53 +186,31 @@ section h2{
 }
 
 .box{
-
-    background:#1b1b1b;
-
-    padding:30px;
-
+    background:#1e1e1e;
     border-radius:15px;
-
+    padding:30px;
     text-align:center;
-
     transition:.4s;
-
-    border:1px solid #333;
-
 }
 
 .box:hover{
-
     transform:translateY(-10px);
-
     box-shadow:0 10px 25px rgba(255,215,0,.25);
-
 }
 
 .box i{
-
     font-size:55px;
-
     color:gold;
-
     margin-bottom:20px;
-
 }
 
 .box h3{
-
     margin-bottom:15px;
-
     color:gold;
-
 }
 
 .box p{
-
     color:#ddd;
-
-    line-height:1.8;
-
 }
 
 /* ==========================================
@@ -265,59 +218,37 @@ section h2{
 ========================================== */
 
 .service-container{
-
     display:grid;
-
     grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-
     gap:30px;
-
 }
 
 .service-card{
-
-    background:#202020;
-
-    border-radius:15px;
-
+    background:#222;
     padding:35px;
-
+    border-radius:15px;
     text-align:center;
-
     transition:.4s;
-
-    border:1px solid #444;
-
 }
 
 .service-card:hover{
-
     transform:translateY(-10px);
-
-    box-shadow:0 10px 25px rgba(255,215,0,.30);
-
+    box-shadow:0 10px 25px rgba(255,215,0,.25);
 }
 
 .service-card i{
-
+    font-size:50px;
     color:gold;
-
     margin-bottom:20px;
-
 }
 
 .service-card h3{
-
+    margin:15px 0;
     color:gold;
-
-    margin:20px 0;
-
 }
 
 .service-card p{
-
     color:#ddd;
-
 }
 
 /* ==========================================
@@ -325,73 +256,23 @@ section h2{
 ========================================== */
 
 .gallery-grid{
-
     display:grid;
-
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-
-    gap:25px;
-
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
 }
 
 .gallery-grid img{
-
     width:100%;
-
     height:320px;
-
     object-fit:cover;
-
-    border-radius:15px;
-
+    border-radius:12px;
     transition:.4s;
-
     cursor:pointer;
-
-    border:3px solid #222;
-
 }
 
 .gallery-grid img:hover{
-
     transform:scale(1.05);
-
-    border-color:gold;
-
-    box-shadow:0 10px 30px rgba(255,215,0,.35);
-
-}
-
-/* ==========================================
-   BUTTONS
-========================================== */
-
-.btn{
-
-    display:inline-block;
-
-    padding:14px 34px;
-
-    background:gold;
-
-    color:#000;
-
-    text-decoration:none;
-
-    border-radius:30px;
-
-    font-weight:600;
-
-    transition:.3s;
-
-}
-
-.btn:hover{
-
-    background:#fff;
-
-    color:#000;
-
+    box-shadow:0 10px 25px rgba(255,215,0,.35);
 }
 /* ==========================================
    CONTACT SECTION
@@ -399,6 +280,7 @@ section h2{
 
 .contact-home{
     text-align:center;
+    padding:80px 8%;
 }
 
 .contact-home p{
@@ -412,6 +294,8 @@ section h2{
     margin-right:10px;
     font-size:22px;
 }
+
+/* WhatsApp Button */
 
 .whatsapp-btn{
     display:inline-block;
@@ -427,8 +311,8 @@ section h2{
 }
 
 .whatsapp-btn:hover{
-    background:#1EBE5D;
-    transform:scale(1.05);
+    background:#1ebe5d;
+    transform:translateY(-5px);
 }
 
 /* ==========================================
@@ -437,14 +321,12 @@ section h2{
 
 footer{
     background:#000;
-    padding:30px;
     text-align:center;
-    margin-top:40px;
+    padding:30px;
 }
 
 footer p{
     color:#bbb;
-    font-size:16px;
 }
 
 /* ==========================================
@@ -453,8 +335,8 @@ footer p{
 
 .floating-whatsapp{
     position:fixed;
-    right:25px;
-    bottom:25px;
+    right:20px;
+    bottom:20px;
     width:65px;
     height:65px;
     background:#25D366;
@@ -465,9 +347,9 @@ footer p{
     align-items:center;
     text-decoration:none;
     font-size:34px;
-    box-shadow:0 5px 15px rgba(0,0,0,.4);
-    transition:.3s;
+    box-shadow:0 5px 20px rgba(0,0,0,.4);
     z-index:999;
+    transition:.3s;
 }
 
 .floating-whatsapp:hover{
@@ -475,18 +357,38 @@ footer p{
 }
 
 /* ==========================================
-   IMAGE ANIMATION
+   SCROLL TO TOP BUTTON
 ========================================== */
 
-.gallery-grid img{
-    animation:fadeIn .8s ease;
+#topBtn{
+    position:fixed;
+    bottom:100px;
+    right:20px;
+    width:50px;
+    height:50px;
+    background:gold;
+    color:#000;
+    border:none;
+    border-radius:50%;
+    cursor:pointer;
+    display:none;
+    font-size:22px;
+    z-index:999;
 }
 
-@keyframes fadeIn{
+#topBtn:hover{
+    background:#fff;
+}
+
+/* ==========================================
+   FADE ANIMATION
+========================================== */
+
+@keyframes fadeUp{
 
     from{
         opacity:0;
-        transform:translateY(20px);
+        transform:translateY(40px);
     }
 
     to{
@@ -496,126 +398,73 @@ footer p{
 
 }
 
+section{
+    animation:fadeUp .8s ease;
+}
+
 /* ==========================================
-   RESPONSIVE
+   MOBILE RESPONSIVE
 ========================================== */
 
 @media(max-width:768px){
 
 header{
-
-flex-direction:column;
-
-padding:15px;
-
+    flex-direction:column;
+    padding:15px;
 }
 
 .logo{
-
-font-size:24px;
-
-margin-bottom:10px;
-
+    font-size:24px;
+    margin-bottom:10px;
 }
 
 nav ul{
-
-flex-wrap:wrap;
-
-justify-content:center;
-
+    flex-wrap:wrap;
+    justify-content:center;
 }
 
 nav ul li{
-
-margin:8px;
-
+    margin:8px;
 }
 
 .hero{
-
-height:70vh;
-
-background-size:contain;
-
-background-color:#111;
-
+    height:80vh;
 }
 
 .hero-content h1{
-
-font-size:30px;
-
+    font-size:32px;
 }
 
 .hero-content h2{
-
-font-size:40px;
-
+    font-size:42px;
 }
 
 .hero-content p{
-
-font-size:16px;
-
-padding:0 15px;
-
+    font-size:18px;
 }
 
-section{
-
-padding:50px 20px;
-
+.btn{
+    display:block;
+    width:220px;
+    margin:15px auto;
 }
 
-section h2{
-
-font-size:30px;
-
+.about-grid,
+.service-container,
+.gallery-grid{
+    grid-template-columns:1fr;
 }
 
 .gallery-grid img{
-
-height:220px;
-
+    height:240px;
 }
 
-.service-card{
-
-padding:20px;
-
+section{
+    padding:60px 20px;
 }
 
-.about-grid{
-
-grid-template-columns:1fr;
-
-}
-
-.service-container{
-
-grid-template-columns:1fr;
-
-}
-
-.gallery-grid{
-
-grid-template-columns:1fr;
-
-}
-
-.floating-whatsapp{
-
-width:55px;
-
-height:55px;
-
-font-size:28px;
-
-right:15px;
-
-bottom:15px;
-
+.contact-home p{
+    font-size:18px;
 }
 
 }
